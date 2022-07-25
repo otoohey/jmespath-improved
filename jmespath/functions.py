@@ -219,6 +219,10 @@ class Functions(metaclass=FunctionRegistry):
 
     @signature({"types": ["array", "string"]}, {"types": []})
     def _func_contains(self, subject, search):
+        return search in subject
+
+    @signature({"types": ["array", "string"]}, {"types": []})
+    def _func_contains_case_insensitive(self, subject, search):
         return search in subject.lower()
 
     @signature({"types": ["string", "array", "object"]})
